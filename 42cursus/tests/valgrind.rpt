@@ -1,0 +1,45 @@
+==27778== Memcheck, a memory error detector
+==27778== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==27778== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==27778== Command: ./calloc2
+==27778== Parent PID: 7038
+==27778== 
+==27778== Invalid write of size 1
+==27778==    at 0x40131F: ft_bzero (ft_bzero.c:24)
+==27778==    by 0x4012D3: ft_calloc (ft_calloc.c:24)
+==27778==    by 0x401187: main (calloc_main2.c:12)
+==27778==  Address 0x4a4d0c0 is 0 bytes after a block of size 16 alloc'd
+==27778==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27778==    by 0x4012BD: ft_calloc (ft_calloc.c:23)
+==27778==    by 0x401187: main (calloc_main2.c:12)
+==27778== 
+==27778== Invalid read of size 4
+==27778==    at 0x40121B: main (calloc_main2.c:19)
+==27778==  Address 0x4a4d0c0 is 0 bytes after a block of size 16 alloc'd
+==27778==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27778==    by 0x4012BD: ft_calloc (ft_calloc.c:23)
+==27778==    by 0x401187: main (calloc_main2.c:12)
+==27778== 
+==27778== 
+==27778== HEAP SUMMARY:
+==27778==     in use at exit: 56 bytes in 2 blocks
+==27778==   total heap usage: 3 allocs, 1 frees, 1,080 bytes allocated
+==27778== 
+==27778== 16 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==27778==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27778==    by 0x4012BD: ft_calloc (ft_calloc.c:23)
+==27778==    by 0x401187: main (calloc_main2.c:12)
+==27778== 
+==27778== 40 bytes in 1 blocks are definitely lost in loss record 2 of 2
+==27778==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==27778==    by 0x401174: main (calloc_main2.c:11)
+==27778== 
+==27778== LEAK SUMMARY:
+==27778==    definitely lost: 56 bytes in 2 blocks
+==27778==    indirectly lost: 0 bytes in 0 blocks
+==27778==      possibly lost: 0 bytes in 0 blocks
+==27778==    still reachable: 0 bytes in 0 blocks
+==27778==         suppressed: 0 bytes in 0 blocks
+==27778== 
+==27778== For lists of detected and suppressed errors, rerun with: -s
+==27778== ERROR SUMMARY: 32 errors from 4 contexts (suppressed: 0 from 0)
